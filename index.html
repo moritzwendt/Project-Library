@@ -1,96 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Moritz’ Project Library</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Moritz’ Project Library</h1>
-    <div id="datetime"></div>
+    <div id="datetime"><span id="time"></span><span id="date"></span></div>
   </header>
 
+  <!-- Controls: Search / Sort / Language Filters -->
+  <section class="controls">
+    <div class="controls-left">
+      <input id="search" type="search" placeholder="Suche Projekte..." />
+      <select id="sort">
+        <option value="newest">Neueste</option>
+        <option value="oldest">Älteste</option>
+        <option value="name-asc">Name A → Z</option>
+        <option value="name-desc">Name Z → A</option>
+      </select>
+    </div>
+
+    <div class="controls-right">
+      <div id="language-filters" class="language-filters">
+        <!-- Checkboxen werden dynamisch generiert -->
+      </div>
+    </div>
+  </section>
+
   <main>
-    <div class="project-grid">
-      <!-- 7 Projekte -->
-      <div class="project-card">
-        <div class="image-container">
-          <img src="https://placehold.co/300x200" alt="Projekt 1">
-          <div class="overlay">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel odio sed leo ultrices.</p>
-          </div>
-        </div>
-        <h2>Projekt 1</h2>
-        <button class="mobile-info-btn">Mehr erfahren</button>
-      </div>
-
-      <div class="project-card">
-        <div class="image-container">
-          <img src="https://placehold.co/300x200" alt="Projekt 2">
-          <div class="overlay">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel odio sed leo ultrices.</p>
-          </div>
-        </div>
-        <h2>Projekt 2</h2>
-        <button class="mobile-info-btn">Mehr erfahren</button>
-      </div>
-
-      <div class="project-card">
-        <div class="image-container">
-          <img src="https://placehold.co/300x200" alt="Projekt 3">
-          <div class="overlay">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel odio sed leo ultrices.</p>
-          </div>
-        </div>
-        <h2>Projekt 3</h2>
-        <button class="mobile-info-btn">Mehr erfahren</button>
-      </div>
-
-      <div class="project-card">
-        <div class="image-container">
-          <img src="https://placehold.co/300x200" alt="Projekt 4">
-          <div class="overlay">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel odio sed leo ultrices.</p>
-          </div>
-        </div>
-        <h2>Projekt 4</h2>
-        <button class="mobile-info-btn">Mehr erfahren</button>
-      </div>
-
-      <div class="project-card">
-        <div class="image-container">
-          <img src="https://placehold.co/300x200" alt="Projekt 5">
-          <div class="overlay">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel odio sed leo ultrices.</p>
-          </div>
-        </div>
-        <h2>Projekt 5</h2>
-        <button class="mobile-info-btn">Mehr erfahren</button>
-      </div>
-
-      <div class="project-card">
-        <div class="image-container">
-          <img src="https://placehold.co/300x200" alt="Projekt 6">
-          <div class="overlay">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel odio sed leo ultrices.</p>
-          </div>
-        </div>
-        <h2>Projekt 6</h2>
-        <button class="mobile-info-btn">Mehr erfahren</button>
-      </div>
-
-      <div class="project-card">
-        <div class="image-container">
-          <img src="https://placehold.co/300x200" alt="Projekt 7">
-          <div class="overlay">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel odio sed leo ultrices.</p>
-          </div>
-        </div>
-        <h2>Projekt 7</h2>
-        <button class="mobile-info-btn">Mehr erfahren</button>
-      </div>
+    <div class="project-grid" id="projectGrid">
+      <!-- Projekt-Karten werden per JS gerendert -->
     </div>
   </main>
 

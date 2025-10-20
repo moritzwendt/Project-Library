@@ -1,172 +1,187 @@
 @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap');
 
+:root{
+  --accent: #007aff;
+  --accent-600: #0065d4;
+  --bg-1: #e8f1ff;
+  --bg-2: #f9f9f9;
+  --card-bg: #ffffff;
+  --muted: #666;
+}
+
+* { box-sizing: border-box; }
+html,body { height:100%; }
 body {
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: 'SF Pro Display', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   margin: 0;
-  background: linear-gradient(160deg, #e8f1ff 0%, #f9f9f9 100%);
+  background: linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 100%);
   color: #111;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 2rem;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1.1rem 1.6rem;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
   box-shadow: 0 1px 5px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 40;
 }
 
-h1 {
-  font-weight: 600;
-  font-size: 1.4rem;
+h1 { margin:0; font-weight:600; font-size:1.35rem; }
+
+/* Date/Time (Time more prominent, left of date) */
+#datetime { display:flex; gap:.6rem; align-items:baseline; color:var(--muted); font-weight:500; }
+#time { font-size:1.15rem; color:#222; font-weight:600; }
+#date { font-size:.9rem; color:var(--muted); }
+
+/* Controls */
+.controls {
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.9rem 1.6rem;
+  align-items:center;
 }
 
-#datetime {
-  font-size: 1.1rem;
-  color: #444;
-  font-weight: 500;
+.controls-left { display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap; }
+#search {
+  padding:0.45rem 0.75rem;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.06);
+  background:#fff;
+  min-width:180px;
+}
+#sort {
+  padding:0.45rem 0.6rem;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.06);
+  background:#fff;
 }
 
-main {
-  flex: 1;
-  padding: 2rem;
+/* Language filters container */
+.language-filters {
+  display:flex;
+  gap:0.6rem;
+  flex-wrap:wrap;
+  align-items:center;
 }
 
+/* Checkbox style */
+.lang-item {
+  display:flex;
+  gap:0.35rem;
+  align-items:center;
+  background:rgba(255,255,255,0.9);
+  padding:0.25rem 0.5rem;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.04);
+  font-size:0.88rem;
+}
+.lang-item input { width:16px; height:16px; }
+
+/* Grid */
+main { flex:1; padding:1.6rem; }
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:1.6rem;
+  align-items:start;
 }
 
+/* Card */
 .project-card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  position: relative;
+  background: var(--card-bg);
+  border-radius:18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  overflow:hidden;
+  text-align:center;
+  transition: transform .18s ease, box-shadow .18s ease;
+  position:relative;
 }
-
 .project-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
-.image-container {
-  position: relative;
-  overflow: hidden;
-}
-
+/* Image + overlay */
+.image-container { position:relative; overflow:hidden; }
 .project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: filter 0.3s ease;
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+  transition: filter .28s ease;
 }
-
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.7);
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  text-align:center;
+  font-size:0.93rem;
+  color:#111;
+  background: rgba(255,255,255,0.72);
   backdrop-filter: blur(6px);
-  color: #222;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
+  opacity:0;
+  transition:opacity .28s ease;
 }
 
-/* Hover-Overlay am PC */
-.project-card:hover .overlay {
-  opacity: 1;
-}
+/* Hover shows overlay on desktop */
+.project-card:hover .overlay { opacity:1; }
+.project-card:hover img { filter: blur(4px); }
 
-.project-card:hover img {
-  filter: blur(4px);
-}
+.project-card h2 { margin:0.9rem 0; font-weight:500; font-size:1rem; }
 
-.project-card h2 {
-  margin: 1rem 0;
-  font-weight: 500;
-}
-
-/* Mobile-Button */
+/* Mobile info button */
 .mobile-info-btn {
-  display: none;
-  margin-bottom: 1rem;
-  background: #007aff;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1.2rem;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background 0.2s ease;
+  display:none;
+  margin:0 0 1rem 0;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:0.5rem 1rem;
+  border-radius:12px;
+  font-size:0.92rem;
+  cursor:pointer;
 }
+.mobile-info-btn.active { background: var(--accent-600); }
 
-.mobile-info-btn.active {
-  background: #0065d4;
-}
+/* Footer hint */
+footer { text-align:right; padding:0.5rem 1rem; font-size:0.8rem; color:var(--muted); opacity:0.85; }
 
-/* Hinweis unten */
-footer {
-  text-align: right;
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  color: #666;
-  opacity: 0.7;
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
-  #datetime {
-    font-size: 0.9rem;
-  }
-
-  footer {
-    display: none; /* Hinweis entfernen am Handy */
-  }
+/* Responsive */
+@media (max-width: 960px) {
+  .project-grid { grid-template-columns: 1fr 1fr; }
+  .controls { gap:0.6rem; padding:0.8rem 1rem; }
 }
 
 @media (max-width: 700px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+  header { flex-direction: column; gap:0.45rem; align-items:flex-start; }
+  #time { font-size:1.05rem; }
+  #date { font-size:0.85rem; }
+  .controls { flex-direction:column; align-items:stretch; gap:0.6rem; padding:0.8rem 1rem; }
+  .controls-left { width:100%; display:flex; gap:0.5rem; }
+  .controls-right { width:100%; }
 
-  header {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+  /* single column grid on mobile */
+  .project-grid { grid-template-columns: 1fr; gap:1rem; }
 
-  h1 {
-    font-size: 1.2rem;
-  }
+  /* remove hover scaling and hide footer hint on mobile */
+  .project-card:hover { transform:none; box-shadow: 0 6px 18px rgba(0,0,0,0.05); }
+  footer { display:none; }
 
-  /* Keine Hover-Effekte auf Mobil */
-  .project-card:hover {
-    transform: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  }
+  /* overlay doesn't show on mobile by hover; we control via JS + button */
+  .overlay { opacity:0; }
 
-  .overlay {
-    opacity: 0;
-  }
-
-  .mobile-info-btn {
-    display: inline-block;
-  }
+  .mobile-info-btn { display:inline-block; }
 }
