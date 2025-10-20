@@ -12,6 +12,7 @@ const projects = [
 
 const projectGrid = document.getElementById('projectGrid');
 const searchInput = document.getElementById('search');
+const searchDesktop = document.getElementById('search-desktop');
 const dropdown = document.getElementById('sortDropdown');
 const dropdownToggle = document.getElementById('dropdownToggle');
 const dropdownMenu = document.getElementById('dropdownMenu');
@@ -48,13 +49,12 @@ dropdownMenu.querySelectorAll('li').forEach(li=>{
 
 // Filtering + sorting (AND logic for languages)
 function applyFiltersAndRender() {
-  const q = searchInput.value.trim().toLowerCase();
+  const q = (searchInput.value || searchDesktop.value || "").trim().toLowerCase();
   const selectedLangs = getSelectedLanguages();
   let filtered = projects.filter(p=>{
     const matchesSearch = p.title.toLowerCase().includes(q);
     if(!matchesSearch) return false;
     if(selectedLangs.length===0) return true;
-    // AND logic: project must include all selectedLangs
     return selectedLangs.every(lang => p.languages.includes(lang));
   });
 
@@ -105,6 +105,7 @@ function renderGrid(list){
 }
 
 searchInput.addEventListener('input', ()=>applyFiltersAndRender());
+searchDesktop.addEventListener('input', ()=>applyFiltersAndRender());
 languageFiltersContainer.addEventListener('change', ()=>applyFiltersAndRender());
 
 applyFiltersAndRender();
