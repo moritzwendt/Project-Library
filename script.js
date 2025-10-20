@@ -7,7 +7,8 @@ const projects = [
   { id:"p4", title:"Projekt 4", date:"2022-04-02", languages:["JavaScript","TypeScript"], image:"https://placehold.co/600x400?text=Projekt+4", description:"Duis aute irure dolor in reprehenderit in voluptate velit esse." },
   { id:"p5", title:"Projekt 5", date:"2024-06-18", languages:["Swift"], image:"https://placehold.co/600x400?text=Projekt+5", description:"Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat." },
   { id:"p6", title:"Projekt 6", date:"2021-12-10", languages:["PHP","HTML"], image:"https://placehold.co/600x400?text=Projekt+6", description:"Sunt in culpa qui officia deserunt mollit anim id est laborum." },
-  { id:"p7", title:"Projekt 7", date:"2024-02-28", languages:["CSS","JavaScript"], image:"https://placehold.co/600x400?text=Projekt+7", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit." }
+  { id:"p7", title:"Projekt 7", date:"2024-02-28", languages:["CSS","JavaScript"], image:"https://placehold.co/600x400?text=Projekt+7", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+  { id:"p8", title:"Test", date:"2025-10-20", languages:["CSS","HTML","JavaScript"], image:"https://placehold.co/600x400?text=Test+Projekt", description:"Test project von heute" },
 ];
 
 const projectGrid = document.getElementById('projectGrid');
