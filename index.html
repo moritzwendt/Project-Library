@@ -9,32 +9,35 @@
 <body>
   <header>
     <h1>Moritz’ Project Library</h1>
-    <div id="datetime"><span id="time"></span><span id="date"></span></div>
+    <div id="datetime">
+      <span id="time"></span>
+      <span id="date"></span>
+    </div>
   </header>
 
-  <!-- Controls: Search / Sort / Language Filters -->
   <section class="controls">
     <div class="controls-left">
-      <input id="search" type="search" placeholder="Suche Projekte..." />
-      <select id="sort">
-        <option value="newest">Neueste</option>
-        <option value="oldest">Älteste</option>
-        <option value="name-asc">Name A → Z</option>
-        <option value="name-desc">Name Z → A</option>
-      </select>
+      <div id="language-filters" class="language-filters"></div>
+
+      <!-- Custom Dropdown -->
+      <div class="dropdown" id="sortDropdown">
+        <button class="dropdown-toggle" id="dropdownToggle">Sortieren nach: Neueste</button>
+        <ul class="dropdown-menu" id="dropdownMenu">
+          <li data-value="newest">Neueste</li>
+          <li data-value="oldest">Älteste</li>
+          <li data-value="name-asc">Name A → Z</li>
+          <li data-value="name-desc">Name Z → A</li>
+        </ul>
+      </div>
     </div>
 
     <div class="controls-right">
-      <div id="language-filters" class="language-filters">
-        <!-- Checkboxen werden dynamisch generiert -->
-      </div>
+      <input id="search" type="search" placeholder="🔍 Suche Projekte..." />
     </div>
   </section>
 
   <main>
-    <div class="project-grid" id="projectGrid">
-      <!-- Projekt-Karten werden per JS gerendert -->
-    </div>
+    <div class="project-grid" id="projectGrid"></div>
   </main>
 
   <footer>
