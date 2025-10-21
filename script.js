@@ -1,14 +1,14 @@
-const languagesMaster = ["HTML","CSS","JavaScript","TypeScript","PHP","Python","Swift"];
+const languagesMaster = ["HTML","CSS","JavaScript","Lua","PHP","Python","React"];
 
 const projects = [
-  { id:"p1", title:"Flip a Coin", date:"2024-11-20", languages:["HTML","CSS","JavaScript"], image:"previews/flipacoin.png", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", url:"flipacoin/index.html" },
-  { id:"p2", title:"Projekt 2", date:"2023-07-05", languages:["HTML","CSS"], image:"https://placehold.co/600x400?text=Projekt+2", description:"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-  { id:"p3", title:"Projekt 3", date:"2025-01-14", languages:["Python"], image:"https://placehold.co/600x400?text=Projekt+3", description:"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi." },
-  { id:"p4", title:"Projekt 4", date:"2022-04-02", languages:["JavaScript","TypeScript"], image:"https://placehold.co/600x400?text=Projekt+4", description:"Duis aute irure dolor in reprehenderit in voluptate velit esse." },
-  { id:"p5", title:"Projekt 5", date:"2024-06-18", languages:["Swift"], image:"https://placehold.co/600x400?text=Projekt+5", description:"Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat." },
-  { id:"p6", title:"Projekt 6", date:"2021-12-10", languages:["PHP","HTML"], image:"https://placehold.co/600x400?text=Projekt+6", description:"Sunt in culpa qui officia deserunt mollit anim id est laborum." },
-  { id:"p7", title:"Projekt 7", date:"2024-02-28", languages:["CSS","JavaScript"], image:"https://placehold.co/600x400?text=Projekt+7", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-  { id:"p8", title:"Test", date:"2025-10-20", languages:["CSS","HTML","JavaScript"], image:"https://placehold.co/600x400?text=Test+Projekt", description:"Test project von heute" },
+  { id:"p1", title:"Flip a Coin", date:"2024-11-20", languages:["HTML","CSS","JavaScript"], image:"previews/flipacoin.png", description:"x", url:"flipacoin/index.html" },
+  { id:"p2", title:"Praktikum Fachinformatik", date:"2025-04-07", languages:["HTML","CSS", "React", "JavaScript"], image:"previews/praktikumtu.png", description:"x", url:"https://praktikum-tu-ilmenau.de/"},
+  { id:"p3", title:"Projekt 3", date:"2025-03-14", languages:["Python"], image:"https://placehold.co/600x400?text=Projekt+3", description:"x" },
+  { id:"p4", title:"Projekt 4", date:"2022-04-02", languages:["JavaScript","Lua"], image:"https://placehold.co/600x400?text=Projekt+4", description:"x" },
+  { id:"p5", title:"Projekt 5", date:"2024-06-18", languages:["HTML"], image:"https://placehold.co/600x400?text=Projekt+5", description:"x" },
+  { id:"p6", title:"Projekt 6", date:"2021-12-10", languages:["PHP","HTML"], image:"https://placehold.co/600x400?text=Projekt+6", description:"x" },
+  { id:"p7", title:"Projekt 7", date:"2024-02-28", languages:["CSS","JavaScript"], image:"https://placehold.co/600x400?text=Projekt+7", description:"x" },
+  { id:"p8", title:"Test", date:"2025-10-20", languages:["CSS","HTML","JavaScript"], image:"https://placehold.co/600x400?text=Test+Projekt", description:"x" },
 ];
 
 const projectGrid = document.getElementById('projectGrid');
