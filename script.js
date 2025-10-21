@@ -3,8 +3,8 @@ const languagesMaster = ["HTML","CSS","JavaScript","Lua","PHP","Python","React"]
 const projects = [
   { id:"p1", title:"Flip a Coin", date:"2024-11-20", languages:["HTML","CSS","JavaScript"], image:"previews/flipacoin.png", description:"x", url:"flipacoin/index.html" },
   { id:"p2", title:"Praktikum Fachinformatik", date:"2025-04-07", languages:["HTML","CSS", "React", "JavaScript"], image:"previews/praktikumtu.png", description:"x", url:"https://praktikum-tu-ilmenau.de/"},
-  { id:"p3", title:"Projekt 3", date:"2025-03-14", languages:["Python"], image:"https://placehold.co/600x400?text=Projekt+3", description:"x" },
-  { id:"p4", title:"Projekt 4", date:"2022-04-02", languages:["JavaScript","Lua"], image:"https://placehold.co/600x400?text=Projekt+4", description:"x" },
+  { id:"p3", title:"Movingbutton", date:"2024-03-14", languages:["HTML", "CSS", "JavaScript"], image:"previews/movingbutton.png", description:"x", url:"movingbutton/index.html"},
+  { id:"p4", title:"Password Generator", date:"2025-04-02", languages:["JavaScript","HTML"], image:"previews/passwordgen.png", description:"x", url:"passwordgen/index.html"},
   { id:"p5", title:"Projekt 5", date:"2024-06-18", languages:["HTML"], image:"https://placehold.co/600x400?text=Projekt+5", description:"x" },
   { id:"p6", title:"Projekt 6", date:"2021-12-10", languages:["PHP","HTML"], image:"https://placehold.co/600x400?text=Projekt+6", description:"x" },
   { id:"p7", title:"Projekt 7", date:"2024-02-28", languages:["CSS","JavaScript"], image:"https://placehold.co/600x400?text=Projekt+7", description:"x" },

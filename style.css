@@ -318,8 +318,9 @@ footer {
   padding: 0.6rem 2rem;
   font-size: 0.8rem;
   color: var(--muted);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 1);
+  /* background: rgba(255, 255, 255, 0.92); */
+  /* backdrop-filter: blur(6px); */
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
   z-index: 50;
 }
