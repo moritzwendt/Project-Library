@@ -8,6 +8,12 @@
   --muted: #666;
 }
 
+/* ######TEMPORÄRE LÖSUNG####### */
+.card-footer button{
+  display: none;
+}
+/* ######TEMPORÄRE LÖSUNG####### */
+
 * {
   box-sizing: border-box;
   -webkit-user-select: none;
@@ -235,8 +241,7 @@ main .project-grid {
 }
 
 .image-container {
-  position: relative;
-  overflow: hidden;
+  width: 100%;
 }
 .project-card img {
   width: 100%;
@@ -268,13 +273,17 @@ main .project-grid {
   filter: blur(4px);
 }
 
-/* Titel + Button-Leiste */
 .card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 1rem;
 }
+
+.mobile-info-btn{
+  display: none;
+}
+
 .project-card h2 {
   margin: 0;
   font-weight: 500;
@@ -327,6 +336,10 @@ footer {
   .project-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .project-card-link:hover{
+    transition: inherit;
+  }
 }
 
 @media (max-width: 800px) {
@@ -347,6 +360,35 @@ footer {
   .mobile-search {
     display: block;
     width: 100%;
+  }
+}
+@media (max-width: 1250px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-search {
+    display: block;
+    width: 100%;
+  }
+  .mobile-info-btn{
+    display: block;
+  }
+
+  .project-card:hover {
+    transform: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  .project-card:hover .overlay {
+    opacity: 0 !important;
+  }
+
+  .project-card:hover img {
+    filter: none !important;
+  }
+
+  footer .right{
+    display: none;
   }
 }
 

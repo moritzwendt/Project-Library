@@ -1,7 +1,7 @@
 const languagesMaster = ["HTML","CSS","JavaScript","TypeScript","PHP","Python","Swift"];
 
 const projects = [
-  { id:"p1", title:"Projekt 1", date:"2024-11-20", languages:["HTML","CSS","JavaScript"], image:"https://placehold.co/600x400?text=Projekt+1", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", url:"projekt1.html" },
+  { id:"p1", title:"Flip a Coin", date:"2024-11-20", languages:["HTML","CSS","JavaScript"], image:"previews/flipacoin.png", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", url:"flipacoin/index.html" },
   { id:"p2", title:"Projekt 2", date:"2023-07-05", languages:["HTML","CSS"], image:"https://placehold.co/600x400?text=Projekt+2", description:"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
   { id:"p3", title:"Projekt 3", date:"2025-01-14", languages:["Python"], image:"https://placehold.co/600x400?text=Projekt+3", description:"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi." },
   { id:"p4", title:"Projekt 4", date:"2022-04-02", languages:["JavaScript","TypeScript"], image:"https://placehold.co/600x400?text=Projekt+4", description:"Duis aute irure dolor in reprehenderit in voluptate velit esse." },
@@ -70,7 +70,15 @@ function applyFiltersAndRender() {
 function renderGrid(list){
   projectGrid.innerHTML='';
   list.forEach(p=>{
-    const card=document.createElement('article');
+    // Card-Link
+    const cardLink = document.createElement('a');
+    cardLink.href = p.url || '#';
+    cardLink.className = 'project-card-link';
+    cardLink.style.textDecoration = 'none';
+    cardLink.style.color = 'inherit';
+
+    // Card erstellen
+    const card = document.createElement('article');
     card.className='project-card';
     card.innerHTML=`
       <div class="image-container">
@@ -79,24 +87,28 @@ function renderGrid(list){
       </div>
       <div class="card-footer">
         <h2>${p.title}</h2>
-        <button class="mobile-info-btn">Mehr</button>
+        <button class="mobile-info-btn">Mehr erfahren</button>
       </div>
     `;
-    projectGrid.appendChild(card);
+
+    cardLink.appendChild(card);
+    projectGrid.appendChild(cardLink);
 
     const btn = card.querySelector('.mobile-info-btn');
     const overlay = card.querySelector('.overlay');
     const img = card.querySelector('img');
 
+    // Overlay-Button klick
     btn.addEventListener('click', e=>{
-      e.stopPropagation();
+      e.preventDefault();      // verhindert, dass Link ausgelöst wird
+      e.stopPropagation();     // verhindert Link-Ausführung
       const active = btn.classList.toggle('active');
       if(active){
         btn.textContent='Schließen';
         overlay.style.opacity='1';
         img.style.filter='blur(4px)';
       } else {
-        btn.textContent='Mehr';
+        btn.textContent='Mehr erfahren';
         overlay.style.opacity='0';
         img.style.filter='blur(0)';
       }
@@ -117,3 +129,14 @@ function updateDateTime(){
 }
 updateDateTime();
 setInterval(updateDateTime,60000);
+
+
+
+
+const cardLink = document.createElement('a');
+cardLink.href = p.url;
+cardLink.className = 'project-card-link';
+cardLink.style.textDecoration = 'none';
+cardLink.style.color = 'inherit';
+cardLink.appendChild(card);
+projectGrid.appendChild(cardLink);
