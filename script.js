@@ -1,7 +1,7 @@
 const languagesMaster = ["HTML","CSS","JavaScript","TypeScript","PHP","Python","Swift"];
 
 const projects = [
-  { id:"p1", title:"Projekt 1", date:"2024-11-20", languages:["HTML","CSS","JavaScript"], image:"https://placehold.co/600x400?text=Projekt+1", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+  { id:"p1", title:"Projekt 1", date:"2024-11-20", languages:["HTML","CSS","JavaScript"], image:"https://placehold.co/600x400?text=Projekt+1", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", url:"projekt1.html" },
   { id:"p2", title:"Projekt 2", date:"2023-07-05", languages:["HTML","CSS"], image:"https://placehold.co/600x400?text=Projekt+2", description:"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
   { id:"p3", title:"Projekt 3", date:"2025-01-14", languages:["Python"], image:"https://placehold.co/600x400?text=Projekt+3", description:"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi." },
   { id:"p4", title:"Projekt 4", date:"2022-04-02", languages:["JavaScript","TypeScript"], image:"https://placehold.co/600x400?text=Projekt+4", description:"Duis aute irure dolor in reprehenderit in voluptate velit esse." },
@@ -21,7 +21,6 @@ const languageFiltersContainer = document.getElementById('language-filters');
 
 let currentSort = "newest";
 
-// Render checkboxes
 languagesMaster.forEach(lang=>{
   const label=document.createElement('label');
   label.className='lang-item';
@@ -33,7 +32,6 @@ function getSelectedLanguages() {
   return Array.from(languageFiltersContainer.querySelectorAll('input:checked')).map(c=>c.value);
 }
 
-// Custom dropdown logic
 dropdownToggle.addEventListener('click', (e)=>{
   e.stopPropagation();
   dropdown.classList.toggle('open');
@@ -48,7 +46,6 @@ dropdownMenu.querySelectorAll('li').forEach(li=>{
   });
 });
 
-// Filtering + sorting (AND logic for languages)
 function applyFiltersAndRender() {
   const q = (searchInput.value || searchDesktop.value || "").trim().toLowerCase();
   const selectedLangs = getSelectedLanguages();
@@ -80,8 +77,10 @@ function renderGrid(list){
         <img src="${p.image}" alt="${p.title}">
         <div class="overlay"><p>${p.description}</p></div>
       </div>
-      <h2>${p.title}</h2>
-      <button class="mobile-info-btn">Mehr erfahren</button>
+      <div class="card-footer">
+        <h2>${p.title}</h2>
+        <button class="mobile-info-btn">Mehr</button>
+      </div>
     `;
     projectGrid.appendChild(card);
 
@@ -97,7 +96,7 @@ function renderGrid(list){
         overlay.style.opacity='1';
         img.style.filter='blur(4px)';
       } else {
-        btn.textContent='Mehr erfahren';
+        btn.textContent='Mehr';
         overlay.style.opacity='0';
         img.style.filter='blur(0)';
       }
@@ -111,11 +110,10 @@ languageFiltersContainer.addEventListener('change', ()=>applyFiltersAndRender())
 
 applyFiltersAndRender();
 
-// Date + Time
 function updateDateTime(){
   const now=new Date();
   document.getElementById('time').textContent=now.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'});
-  document.getElementById('date').textContent=now.toLocaleDateString('de-DE',{weekday:'long',day:'2-digit',month:'2-digit',year:'numeric'});
+  document.getElementById('date').textContent=now.toLocaleDateString('de-DE',{weekday:'short',day:'2-digit',month:'2-digit',year:'numeric'});
 }
-setInterval(updateDateTime,1000);
 updateDateTime();
+setInterval(updateDateTime,60000);
