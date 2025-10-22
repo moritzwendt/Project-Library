@@ -11,10 +11,19 @@ body{
     background-color: #895cf3;
 }
 
+.main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
 .container{
-    width: 500px;
+    width: 90%;
+    max-width: 500px;
     background: #fff;
-    padding: 80px 40px;
+    padding: 60px 30px;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -25,9 +34,9 @@ body{
 
 h2{
     text-align: center;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 h2 span{
@@ -36,20 +45,29 @@ h2 span{
 
 .wrapper-1{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 50px 0 70px 0;
+    margin: 40px 0 60px 0;
     gap: 10px;
 }
 
 .wrapper-1 input{
-    width: 100px;
-    font-size: 30px;
+    width: 80px;
+    font-size: 24px;
     font-weight: 600;
+    text-align: center;
 }
 
+.wrapper-2, .wrapper-3{
+    display: block;
+    width: 100%;
+}
+
+
+
 input{
-    padding: 15px 10px;
+    padding: 12px 10px;
     border: 1px solid #bbc0c5;
     border-radius: 5px;
     color: #170444;
@@ -63,16 +81,41 @@ input:focus{
 label{
     color: #170444;
     font-weight: 600;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
 }
 
 .box{
     display: flex;
     justify-content: space-between;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .wrapper-2 input, .wrapper-3 input{
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px){
+    .container{
+        padding: 40px 20px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
+
+    .wrapper-1 input{
+        width: 60px;
+        font-size: 20px;
+    }
+
+    input{
+        padding: 10px 8px;
+    }
+
+    .wrapper-2 input, .wrapper-3 input{
+        font-size: 14px;
+    }
 }
