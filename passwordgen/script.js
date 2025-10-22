@@ -66,30 +66,3 @@ const copyPassword = () => {
 copyIcon.addEventListener("click", copyPassword);
 lengthSlider.addEventListener("input", updateSlider);
 generateBtn.addEventListener("click", generatePassword);
-
-document.addEventListener('DOMContentLoaded', function() {
-    var rangeInput = document.querySelector('[type="range"]');
-    var h4 = document.querySelector('h4');
-    var rangePercent;
-
-    const updateRange = () => {
-        rangePercent = (rangeInput.value / rangeInput.max) * 100;
-
-        // Update the h4 content to show the percentage
-        h4.innerHTML = Math.round(rangePercent) + '<span></span>';
-
-        // Apply hue-rotate filter based on the percentage value
-        rangeInput.style.filter = 'hue-rotate(-' + rangePercent + 'deg)';
-        h4.querySelector('span').style.filter = 'hue-rotate(-' + rangePercent + 'deg)';
-
-        // Apply transform to h4
-        h4.style.transform = 'translateX(-50%) scale(' + (1 + (rangePercent / 100)) + ')';
-        h4.style.left = rangePercent + '%';
-    };
-
-    // Initial update when page loads
-    updateRange();
-
-    // Listen for changes on range input
-    rangeInput.addEventListener('input', updateRange);
-});

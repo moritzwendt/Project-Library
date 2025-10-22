@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QR-Code-Generator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="container">
+            <h1>QR-Code-Generator</h1>
+            <div class="controls">
+                <input type="color" class="light" value="#ffffff" title="Helle Farbe auswählen">
+                <input type="color" class="dark" value="#000000" title="Dunkle Farbe auswählen">
+                <select class="sizes" title="Größe wählen">
+                    <option value="100">100×100</option>
+                    <option value="200">200×200</option>
+                    <option value="300">300×300</option>
+                    <option value="400" selected>400×400</option>
+                    <option value="500">500×500</option>
+                    <option value="600">600×600</option>
+                    <option value="700">700×700</option>
+                    <option value="800">800×800</option>
+                    <option value="900">900×900</option>
+                    <option value="1000">1000×1000</option>
+                </select>
+            </div>
+            <input
+                type="text"
+                class="qr-text"
+                placeholder="Text oder URL eingeben"
+                aria-label="Text für den QR-Code eingeben"
+                />
+            <div id="qr-code"></div>
+            <div class="buttons">
+                <a href="#" class="btn download" download="QRCode.png">
+                <img src="download.svg" alt="Herunterladen">
+                Herunterladen
+                </a>
+                <button class="btn share-btn">
+                <img src="share.svg" alt="Teilen">
+                Teilen
+                </button>
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

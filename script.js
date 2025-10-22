@@ -3,12 +3,13 @@ const languagesMaster = ["CSS","JavaScript","HTML","Lua","PHP","Python","React",
 const projects = [
   { id:"p1", title:"Flip a Coin", date:"2024-11-20", languages:["HTML","CSS","JavaScript"], image:"previews/flipacoin.png", description:"Ein einfaches Münzwurf-Spiel zur Entscheidungsfindung.", url:"flipacoin/index.html" },
   { id:"p2", title:"Praktikum Fachinformatik", date:"2025-04-07", languages:["HTML","CSS", "React", "JavaScript"], image:"previews/praktikumtu.png", description:"Projekt für ein Praktikums- oder Aufgabenmanagement-System.", url:"https://praktikum-tu-ilmenau.de/"},
-  { id:"p3", title:"Movingbutton", date:"2024-03-14", languages:["HTML", "CSS", "JavaScript"], image:"previews/movingbutton.png", description:"Interaktiver Button, der sich beim Drüberfahren bewegt.", url:"movingbutton/index.html"},
+  // { id:"p3", title:"Movingbutton", date:"2024-03-14", languages:["HTML", "CSS", "JavaScript"], image:"previews/movingbutton.png", description:"Interaktiver Button, der sich beim Drüberfahren bewegt.", url:"movingbutton/index.html"},
   { id:"p4", title:"Password Generator", date:"2025-04-02", languages:["JavaScript","HTML"], image:"previews/passwordgen.png", description:"Generiert sichere Passwörter automatisch.", url:"passwordgen/index.html"},
   { id:"p5", title:"Aspect Ratio", date:"2025-06-18", languages:["HTML", "CSS", "JavaScript"], image:"previews/aspectrt.png", description:"Tool zur Berechnung oder Anpassung von Bild-/Seitenverhältnissen.", url:"aspectrt/index.html"},
   { id:"p6", title:"Currency Converter", date:"2025-12-10", languages:["Json","HTML", "JavaScript"], image:"previews/currencycnv.png", description:"Währungsrechner, der Beträge zwischen verschiedenen Währungen umwandelt.", url:"currencycnv/index.html"},
   { id:"p7", title:"To-Do App", date:"2024-02-28", languages:["HTML","JavaScript", "Json"], image:"previews/todoapp.png", description:"Aufgabenliste/To-Do-App zum Verwalten von täglichen Aufgaben.", url:"todoapp/index.html" },
-  { id:"p8", title:"Test", date:"2025-10-20", languages:["CSS","HTML","JavaScript"], image:"https://placehold.co/600x400?text=Test+Projekt", description:"Beispielprojekt mit Platzhalterbild, dient als Demo.", url:"google.de"},
+  { id:"p8", title:"Test", date:"2025-10-20", languages:["CSS","HTML","JavaScript"], image:"https://placehold.co/600x400?text=Test+Projekt", description:"Beispielprojekt mit Platzhalterbild, dient als Demo.", url:"https://www.google.com/"},
+  { id:"p9", title:"Qr Code Generator", date:"2025-06-20", languages:["CSS","HTML","JavaScript"], image:"previews/qrgen.png", description:"$missing", url:"qrgen/index.html"},
 ];
 
 const projectGrid = document.getElementById('projectGrid');

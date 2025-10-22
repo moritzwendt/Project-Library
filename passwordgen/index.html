@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,11 @@
     <link rel="stylesheet" href="style.css">
     <title>Project Library von Moritz</title>
 </head>
+
 <body>
+
     <div class="container">
-        <h2>Password Generator</h2>
+        <h2>Passwort-Generator</h2>
         <div class="wrapper">
             <div class="input-box">
                 <input type="text" disabled>
@@ -19,50 +22,48 @@
             <div class="pass-indicator"></div>
             <div class="pass-length">
                 <div class="details">
-                    <label class="title">Password Length</label>
+                    <label class="title">Passwortlänge</label>
                     <span></span>
                 </div>
-                <input type="range" min="1" max="32" value="15" step="1">
+                <input type="range" min="1" max="30" value="15" step="1">
             </div>
+
             <div class="pass-settings">
-                <label class="title">Pass Settings</label>
+                <label class="title">Passwort-Einstellungen</label>
                 <ul class="options">
                     <li class="option">
                         <input type="checkbox" id="lowercase" checked>
-                        <label for="lowercase">Lowercase (a-z)</label>
+                        <label for="lowercase">Kleinbuchstaben (a-z)</label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="uppercase">
-                        <label for="uppercase">Uppercase (A-Z)</label>
+                        <label for="uppercase">Großbuchstaben (A-Z)</label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="numbers">
-                        <label for="numbers">Numbers (0-9)</label>
+                        <label for="numbers">Zahlen (0-9)</label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="symbols">
-                        <label for="symbols">Symbols (!-$^+)</label>
+                        <label for="symbols">Symbole (!-$^+)</label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="exc-duplicate">
-                        <label for="exc-duplicate">Exclude Duplicate</label>
+                        <label for="exc-duplicate">Doppelte ausschließen</label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="spaces">
-                        <label for="spaces">Include Spaces</label>
+                        <label for="spaces">Leerzeichen einschließen</label>
                     </li>
                 </ul>
             </div>
-            <button class="generate-btn">Generate Password</button>
+
+            <button class="generate-btn">Passwort generieren</button>
+
         </div>
     </div>
-    <div class="copyright">
-        Copyright © Moritz Wendt. Alle Rechte vorbehalten..
-    </div>
-    <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div>
+
     <script src="script.js"></script>
 </body>
 
 </html>
-
-

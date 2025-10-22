@@ -1,0 +1,143 @@
+/* ===== Global Reset ===== */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* ===== Base Styles ===== */
+body {
+	font-family: 'Inter', sans-serif;
+	background: linear-gradient(145deg, #1a1b22, #232635);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	padding: 20px;
+}
+
+/* ===== Container ===== */
+.container {
+	background: #181b29;
+	border: 1px solid #30344a;
+	border-radius: 12px;
+	padding: 2rem;
+	width: 100%;
+	max-width: 480px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+	text-align: center;
+}
+
+/* ===== Heading ===== */
+h1 {
+	font-size: 1.6rem;
+	margin-bottom: 1.5rem;
+	color: #b9bfff;
+}
+
+/* ===== Controls ===== */
+.controls {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+input[type="color"],
+select {
+	flex: 1;
+	height: 40px;
+	border: 1px solid #414866;
+	border-radius: 6px;
+	background: #1f2233;
+	color: #fff;
+	outline: none;
+	cursor: pointer;
+	transition: border 0.2s ease;
+}
+
+input[type="color"]:hover,
+select:hover {
+	border-color: #6a2bff;
+}
+
+/* ===== Input Field ===== */
+.qr-text {
+	width: 100%;
+	padding: 0.9rem;
+	margin-bottom: 1.5rem;
+	background: #1f2233;
+	border: 1px solid #414866;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 1rem;
+}
+
+.qr-text::placeholder {
+	color: #8b92b7;
+}
+
+/* ===== QR Code Box ===== */
+#qr-code {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	border: 1px dashed #414866;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+	border-radius: 8px;
+	background: #1a1c2b;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.btn {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.9rem;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #fff;
+	background: #6a2bff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+.btn:hover {
+	background: #5723d1;
+	transform: translateY(-2px);
+}
+
+.btn img {
+	width: 18px;
+	height: 18px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+	.controls {
+		flex-direction: column;
+	}
+
+	input[type="color"],
+	select {
+		width: 100%;
+	}
+
+	.buttons {
+		flex-direction: column;
+	}
+}
